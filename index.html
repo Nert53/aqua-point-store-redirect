@@ -9,19 +9,24 @@
 
       var iosLink = "https://apps.apple.com/cz/app/aqua-points-calculator/id6736572544"; 
       var androidLink = "https://play.google.com/store/apps/details?id=cz.umimplavat.aqua_points_calculator&pcampaignid=web_share"; 
-      var webFallback = "https://finapoints.com/#/calculator";
 
       if (/android/i.test(userAgent)) {
         window.location.href = androidLink;
       } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         window.location.href = iosLink;
       } else {
-        window.location.href = webFallback;
+        document.body.innerHTML = `
+          <h2>⚙️ Choose platform manually</h2>
+          <ul>
+            <li><a href="${androidLink}">Download for Android</a></li>
+            <li><a href="${iosLink}">Download for iOS</a></li>
+          </ul>
+        `;
       }
     };
   </script>
 </head>
 <body>
-  <p>Redirecting you to the correct app store...</p>
+  <p>⏳ Redirecting you to the correct app store...</p>
 </body>
 </html>
