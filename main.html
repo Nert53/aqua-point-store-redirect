@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Aqua Points Redirect</title>
+  <script>
+    window.onload = function () {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      var iosLink = "https://rvvmed.cz/"; 
+      var androidLink = "https://www.seznam.cz/"; 
+      var webFallback = "https://example.com/";
+
+      if (/android/i.test(userAgent)) {
+        window.location.href = androidLink;
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = iosLink;
+      } else {
+        window.location.href = webFallback;
+      }
+    };
+  </script>
+</head>
+<body>
+  <p>Přesměrovávám vás do obchodu s aplikacemi...</p>
+</body>
+</html>
