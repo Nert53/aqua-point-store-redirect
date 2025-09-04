@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Aqua Points Redirect</title>
@@ -7,9 +7,9 @@
     window.onload = function () {
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-      var iosLink = "https://rvvmed.cz/"; 
-      var androidLink = "https://www.seznam.cz/"; 
-      var webFallback = "https://example.com/";
+      var iosLink = "https://apps.apple.com/cz/app/aqua-points-calculator/id6736572544"; 
+      var androidLink = "https://play.google.com/store/apps/details?id=cz.umimplavat.aqua_points_calculator&pcampaignid=web_share"; 
+      var webFallback = "https://finapoints.com/#/calculator";
 
       if (/android/i.test(userAgent)) {
         window.location.href = androidLink;
@@ -22,6 +22,6 @@
   </script>
 </head>
 <body>
-  <p>Přesměrovávám vás do obchodu s aplikacemi...</p>
+  <p>Redirecting you to the correct app store...</p>
 </body>
 </html>
